@@ -1,3 +1,7 @@
+# # Add the Transaction object to the BankAccount object
+# post_transact = Transactions(my_account, 200000, "Deposit")
+# print(post_transact) - need some help here sir 
+
 #Using classes, Create a basic banking application with the following features:
 
 # Create a class called BankAccount with the following attributes:
@@ -32,10 +36,6 @@
 # Create a new Transaction object
 # Add the Transaction object to the BankAccount object
 
-
-
-
-
 class BankAccount:
 
     def __init__(self, account_number: str, balance: float, owner: str, type: str):
@@ -46,15 +46,6 @@ class BankAccount:
     def __repr__(self) -> str:
         return (f"Account Number: {self.account_number}, Available balance: {self.balance}, Account Owner: {self.owner}, Account Type: {self.type}..... ")
 
-    # def Transactions(self, BankAccount, amount, type):
-    #     if type == "Deposit":
-    #         balance = BankAccount.balance + amount
-    #     elif type == "Withdraw":
-    #         balance = BankAccount.balance - amount
-    #     else:
-    #         balance = BankAccount.balance
-    #     return (BankAccount) - need some help here sir
-  
 
 class Bank:
         def __init__(self, name: str, accounts: list["BankAccount"]):
@@ -67,7 +58,6 @@ class Bank:
         def add_BankAccount(self, account_number):
             self.account.add(account_number)
             return(Bank)
-
 
 class Customer:
 
@@ -85,17 +75,24 @@ class Customer:
 
 class Transactions:
 
-    def __init__(self, account: "BankAccount", amount: float, type: str):
+    def __init__(self, account, amount, type):
         self.account = account
         self.amount = amount
         self.type = type
 
-    def __repr__(self):
-        return(f'DETAILS! {self.account}, Transaction type: {self.type}, Amount in question: {self.amount}......')
- 
+        if self.type == "deposit":
+            account.balance = account.balance + amount
+        elif self.type == "withdraw":
+            account.balance = account.balance - amount
+        else:
+            print("Enter the correct Transaction type!!!!!")
 
-           
-#create a new bank object
+
+    def __repr__(self):
+        return(f'DETAILS! {self.account}, Transaction Done: {self.type}, Amount in question: {self.amount}......')
+     
+            
+# #create a new bank object
 myBank = Bank("Pheonix", ['Savings', 'Current', 'Fixed Deposit', 'Student'])
 
 #create a new customer object
@@ -105,7 +102,7 @@ new_customer = Customer('Jonathan', ['Fixed deposit account', 'Account number 01
 my_account = BankAccount(9876543210, 10000000, "Jonathan Mbonabyenkya", "Savings")
 
 # Add the BankAccount object to the Bank object
-bank = Bank(myBank, 9876543210)
+bank = Bank(my_account, 9876543210)
 
 # Add the BankAccount object to the Customer object
 customer = Customer("Jonathan", my_account)
@@ -119,11 +116,9 @@ print(new_customer)
 # Print the BankAccount object
 print(my_account)
 
-# Create a new Transaction object
+# # Create a new Transaction object
 
-mytransaction = Transactions(my_account, 200000, "deposit")
+mytransaction = Transactions(my_account, 2000000, "withdraw")
 print(mytransaction)
 
-# # Add the Transaction object to the BankAccount object
-# post_transact = Transactions(my_account, 200000, "Deposit")
-# print(post_transact) - need some help here sir 
+# Add the Transaction object to the BankAccount object.
