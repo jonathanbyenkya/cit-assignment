@@ -55,4 +55,3 @@ num = -10
 while num <= -1:
     print(num)
     num = num + 1 # num += 1
-#1. Print First 10 natural numbers using while loop.
