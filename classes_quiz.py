@@ -109,7 +109,6 @@ print(instance.pop())
 
 
 
-
 # 5. create a class called Person. The class should have the following attributes: name, age, and address. The class should have the following methods: eat, sleep, and work. The eat method should print out the name of the person and the word "is eating". The sleep method should print out the name of the person and the word "is sleeping". The work method should print out the name of the person and the word "is working".
 
 class Person:
@@ -151,8 +150,9 @@ class Employee:
         return f"{self.name} is working"
 
 class Programmer(Employee):
-    def __init__(self, name, age, salary):
+    def __init__(self, name, age, salary, programming_language):
         super().__init__(name, age, salary)
+        self.programming_language = programming_language
 
     def eat(self):
         return f"{self.name} is eating"
@@ -164,13 +164,13 @@ class Programmer(Employee):
         return f"{self.name} is working"
 
     def code(self):
-        return f"{self.name} is coding"
+        return f"{self.name} is coding in {self.programming_language}"
 
 employee = Employee("Samuel", "32", "5000000")
 print(employee.eat())
 print(employee.sleep())
 print(employee.work())
-programmer = Programmer("John", "33", "5000000")
+programmer = Programmer("John", "33", "5000000", "Python")
 print(programmer.code())
 print(programmer.eat())
 print(programmer.sleep())
