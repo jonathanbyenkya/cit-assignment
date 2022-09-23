@@ -48,7 +48,7 @@ class queue:
         return len(self.items)
 
     def enqueue(self, item):
-        self.items.append(item) #(1,2,3,4,5,6)
+        self.items.append(item) 
         return self.items
 
     def size(self):
@@ -61,21 +61,21 @@ class queue:
     def display(self):
         return self.items
 
-new_queue_instance = queue()
-new_queue_instance.enqueue(6)
-new_queue_instance.enqueue(5)
-new_queue_instance.enqueue(4)
-new_queue_instance.enqueue(3)
-new_queue_instance.enqueue(2)
-print(new_queue_instance.display())
-print(new_queue_instance.size())
-new_queue_instance.dequeue()
-new_queue_instance.dequeue()
-new_queue_instance.dequeue()
-new_queue_instance.dequeue()
-new_queue_instance.dequeue()
-print(new_queue_instance.display())
-print(new_queue_instance.size())
+instance = queue()
+instance.enqueue(5)
+instance.enqueue(4)
+instance.enqueue(3)
+instance.enqueue(2)
+instance.enqueue(1)
+print(instance.display())
+print(instance.size())
+instance.dequeue()
+instance.dequeue()
+instance.dequeue()
+# instance.dequeue()
+# instance.dequeue()
+print(instance.display())
+print(instance.size())
 
 
 # 4. create a class called Stack. The class should have the following methods: push, pop, and size. The push method should add an item to the stack. The pop method should remove an item from the stack. The size method should return the size of the stack.
@@ -88,7 +88,7 @@ class stack:
         self.items.append(item)
         return self.items
     def pop(self):
-        self.items.pop(0)
+        self.items.pop()
         return self.items
 
     def size(self):
@@ -98,12 +98,16 @@ class stack:
         return self.items
 
 instance = stack()
+instance.push(4)
 instance.push(3)
 instance.push(2)
 instance.push(1)
 print(instance.size())
 print(instance.display())
 print(instance.pop())
+print(instance.pop())
+
+
 
 
 # 5. create a class called Person. The class should have the following attributes: name, age, and address. The class should have the following methods: eat, sleep, and work. The eat method should print out the name of the person and the word "is eating". The sleep method should print out the name of the person and the word "is sleeping". The work method should print out the name of the person and the word "is working".
