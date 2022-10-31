@@ -24,11 +24,11 @@ def get_cbs_news():
     data = []
 
     soup = BeautifulSoup(response.text, 'html.parser')
-    # print(soup.prettify())
+    print(soup.prettify())
 
 
     first_row = soup.find_all('div', class_ = 'item__title-wrapper')
-    # print(first_row)
+    print(first_row)
 
 # get_cbs_news()
 
